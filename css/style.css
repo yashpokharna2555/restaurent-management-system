@@ -1,0 +1,626 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar{
+    width: 100%;
+    position: sticky;
+    height: 100px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    top: 0;
+}
+.left-nav{
+    width: 30%;
+}
+.left-nav img{
+    width: 70px;
+    border-radius: 50%;
+    padding-left: 30px;
+}
+.right-nav{
+    width: 70%;
+}
+.right-nav ul{
+  display: flex;
+}
+.right-nav ul li{
+   list-style: none;
+}
+.right-nav ul li a{
+    text-decoration: none;
+    color: wheat;
+    font-family: 'Baloo 2', cursive;
+    padding: 0px 10px;
+    font-size: 22px;
+    font-weight: 400;
+    position: relative;
+    left: 30px;
+    }
+.right-nav ul li a:hover{
+    color: black;
+    background: white;
+    border-radius: 30px;
+}
+
+
+#home{
+   display: flex;
+   flex-direction: column;
+   padding: 3px 200px;
+   justify-content: center;
+   align-items: center;
+   height: 600px;
+   margin-bottom: 100px;
+
+}
+#home::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+    background: url('../img/slider1.jpg') center center/cover no-repeat;
+
+}
+#home .h1{
+    color: white;
+    font-size: 2.8rem;
+    padding: 12px;
+    text-align: center;
+}
+#home .p{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.span{
+    font-weight: bold;
+    font-size: 1.53rem;
+    color: rgb(223, 247, 11);
+}
+
+
+/* food */
+.h-primary{
+    font-size: 2.8rem;
+    padding: 12px;
+    font-family: 'Crete Round', serif;
+    text-align: center;
+    margin-top: 20px;
+}
+.h-secondary{
+    font-size: 2.7rem;
+    padding: 12px;
+    font-family: 'Crete Round', serif;
+    text-align: center;
+}
+#services{
+    margin: 34px;
+    display: flex;
+    
+}
+
+#services .box{
+    border: 2px solid brown;
+    margin: 25px 6px;
+    padding: 34px;
+    border-radius: 28px;
+    background-color: #f57e7e;
+    margin-bottom: 20px;
+}
+
+#services .box img{
+    height: 160px;
+    margin: auto;
+    display: block;
+
+}
+#services .box p{
+    font-family: 'Crete Round', serif;
+}
+/* Feedback */
+
+#feedback::before{
+    position: absolute;
+    content: "";
+    height: 70%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+    background: url('../img/feedback.jpg') center center/cover no-repeat;
+
+}
+
+#feedback-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 600px;
+    margin-bottom: 30px;
+
+}
+#feedback-form input{
+    width: 70%;
+    margin: 10px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 3px 0;
+
+}
+
+
+
+
+
+
+
+/*  section rooms */
+#rooms-right{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    
+}
+.paras{
+    padding: 0 65px;
+}
+
+#rooms-left{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin: auto;
+    flex-direction: row-reverse;
+    
+}
+.sectionTag{
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.thumbnail img{
+    padding-right: 10px;
+}
+
+
+
+
+
+/* admin login page */
+.adminlogin{
+    height: 700px;
+    background-color: cornflowerblue;
+   
+}
+.admin-box{
+    height: 400px;
+    width: 600px;
+    background-color: crimson;
+    position: relative;
+    top: 150px;
+    left: 450px;
+}
+.admin-text{
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+table tr td input{
+    border: none;
+    outline: none;
+   
+}
+#username , #password{
+    border-radius: 10px;
+    padding: 3px 0;
+    background-color: darkcyan;
+    width: 100%;
+    
+}
+#btn{
+ width: 30%;
+ border-radius: 6px;
+ background-color: black;
+ color: white;   
+ padding: 3px 0;
+}
+
+
+/* room.php */
+#room-home{
+    overflow: hidden;
+}
+#room-home figure{
+     position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite; 
+   
+}
+#room-home figure img{
+     width: 20%;
+    float: left; 
+    height: 550px;
+}
+@keyframes slider{
+    0%{
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+}
+
+#rooms-right{
+  margin-top: 100px;
+}
+
+/* Food.php */
+.container{
+    /* width: 100%; */
+    margin-top: 30px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 100%; */
+    justify-content: center;
+   
+}
+.col-lg-3{
+    border: 1px solid black;
+    background-color: rgb(243, 124, 103);
+    margin: 30px;
+    height: 330px;
+    width: 250px;
+    border-radius: 50px;
+    text-align: center;
+
+}
+.card img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 5px;
+}
+.card-title{
+    font-size: 20px;
+    padding-top: 5px;
+}
+.card-text{
+    font-size: 18px;
+    padding-top: 5px;
+}
+.btnn{
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-top: 9px;
+    
+}
+/* Cart page */
+
+.containerr::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: "";
+    background: url('../img/hotel3.jpg') center center/cover no-repeat;
+    z-index: -1;
+}
+.col-lg-12{
+    /* width: 100%; */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+}
+.col-lg-12 h1{
+    text-align: center;
+    /* color: white; */
+}
+.rowe{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.col-lg-8{
+    width: 52%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 100px;
+    background:rgba(255,255,255,0.5);
+    width: 80%;
+   
+}
+.table{
+    text-align: center;
+}
+.table tr{
+    margin-left: 100px;
+}
+.table tr th{
+    padding: 15px 20px;
+    font-size: 28px;
+    font-family: 'Heebo', sans-serif;
+    
+    /* color: white; */
+    
+}
+.table tr td{
+    font-size: 18px;
+    font-family: 'Heebo', sans-serif;
+    padding: 10px 0;
+    /* color: white; */
+    
+}
+.table tr td input{
+    background-color: rgb(241, 168, 183);
+    border-radius: 4px;
+    color: rgb(14, 2, 2);
+}
+
+.col-lg-4{
+    /* width: 20%; */
+    margin-top: 0rem;
+}
+.col-lg-4 div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    background-color: rgb(250, 144, 144);
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+   
+    
+}
+.col-lg-4 h3{
+    font-size: 28px;
+}
+.col-lg-4 h5{
+    font-size: 22px;
+    margin-top: 10px;
+}
+.btn{
+    padding: 5px;
+    background-color: tomato;
+    border-radius: 8px;
+}
+/*  Booki g hall */
+
+#booking-hall{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    margin-bottom: 100px;
+    margin-top: 150px;
+ 
+ }
+ #booking-hall::before{
+     position: absolute;
+     content: "";
+     height: 100%;
+     width: 100%;
+     z-index: -1;
+     opacity: 0.89;
+     background: url('../img/bookhall2.png') center center/cover no-repeat;
+ 
+ }
+ #booking-hall .h1{
+     /* color: white; */
+     font-size: 2.8rem;
+     padding: 12px;
+     text-align: center;
+ }
+ #booking-hall .p{
+     color: white;
+     text-align: center;
+     font-size: 1.5rem;
+ }
+ .span{
+     font-weight: bold;
+     font-size: 1.53rem;
+     color: black;
+ }
+#book-btn{
+    padding: 13px;
+    
+    background-color: rgb(150, 9, 150);
+    
+    border: 1px solid red;
+    
+}
+#book-btn a{
+text-decoration: none;
+color:black;
+font-size: 20px;
+
+}
+/* contact page */
+.contact-container{
+    display: flex;
+}
+
+.contact1{
+    background: url('../img/adminhotel2.jpg') center center/cover no-repeat;
+    height: 90%;
+    width: 75%;
+    position: absolute;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    flex-basis: 75%;
+
+}
+.book-h1{
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    
+}
+.book-p{
+    font-size: 14px;
+
+}
+.location i{
+    text-align: center;
+    margin-left: 60px;
+}
+.location {
+    margin-top: 54px;
+}
+.facebook{
+    margin-top: 40px;
+    padding: 8px;
+}
+.facebook i{
+    padding-left: 6px;
+    font-size: 20px;
+}
+.website{
+    margin-top: 30px;
+
+}
+.website p{
+    font-size: 20px;
+}
+.contact2{
+  display: flex;
+    flex-basis: 25%;
+    margin-left: 80%;
+    flex-direction: column;
+    
+    
+}
+.contact2-h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+.contact-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.contact-box form{
+    margin-left:-90px ;
+    height: 450px;
+    width: 300px;
+    background-color: rgb(48, 39, 39);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.form-group-con{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.form-group-con label{
+    color: white;
+    padding-right: 10px;
+    font-size: 17px;
+}
+.form-group-con textarea{
+    resize: none;
+}
+
+/*  Footer  */
+
+.footer{
+    background-color: #222;
+    padding: 5rem 1rem;
+    line-height: 2rem;
+    margin-top: 700px;
+
+}
+
+.footer-center{
+    margin-right: 1rem;
+
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: #fff;
+}
+
+.footer-center a:link,
+.footer-center a:visited{
+    display: block;
+    color: #f1f1f1;
+    font-size: 1.4rem;
+    transition: 0.6s;
+}
+
+.footer-center a:hover{
+    color: #f60091;
+}
+
+.footer-center div{
+    color: #f1f1f1;
+    font-size: 1.4rem;
+}
+
+.footer-center h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
