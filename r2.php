@@ -15,8 +15,46 @@ $ci=$_GET['ci'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ac room form</title>
 </head>
+<style>
+    body{
+        background-color:orange;
+    }
+   #r1-container{
+     
+   }
+   #r1-container h1{
+       text-align:center;
+       margin-top: 30px;
+   }
+   form{
+       display: flex;
+       justify-content:center;
+       align-items: center;
+       
+       flex-direction:column;
+       
+
+   }
+   table{
+      width: 200px;
+      height:150px;
+      border:1px solid black;
+      background-color:red;
+      padding: 40px;
+      border-radius:20px;
+   }
+   table tr td{
+       padding: 8px;
+   }
+   table tr td input{
+       font-size:17px;
+   }
+</style>
 <body>
+    <div id="r1-container">
+    <h1>Please Fill Up The Form Given Below</h1>
 <form action="r2.php" method="post">
+<h1>BOOK NOW</h1>
     <table>
         <tr>
             <td>Status</td>
@@ -113,5 +151,6 @@ $ci=$_GET['ci'];
         }
     ?>
 </form> 
+</div>
 </body>
 </html>

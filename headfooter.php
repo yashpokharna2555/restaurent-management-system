@@ -2,55 +2,47 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-center">
-                    <h3>Extras</h3>
-                    <a href="#">Brands</a>
-                    <a href="#">Gift Certificates</a>
-                    <a href="#">Affiliate</a>
-                    <a href="#">Specials</a>
-                    <a href="#">Site Map</a>
+                <h3>ABOUT US</h3>
+                <p>The majority of independent <br> properties are losing out <br> on a lot of business for <br> one very simple reason: <br> their hotel websites are poorly <br> designed.</p>
                 </div>
                 <div class="footer-center">
-                    <h3>Information</h3>
-                    <a href="#">About Us</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & conditions</a>
-                    <a href="#">Contact us</a>
-                    <a href="#">Site Map</a>
+                    <h3>USEFULL LINKS</h3>
+                    <a href="room.php">Rooms</a>
+                    <a href="contact.php">Contact Us</a>
+                    <a href="food.php">Food</a>
+                    <a href="booking.php">Booking</a>
+                    <a href="index.php">Home</a>
                 </div>
                 <div class="footer-center">
-                    <h3>My Account</h3>
-                    <a href="#">Account </a>
-                    <a href="#">Order History</a>
-                    <a href="#">Wish List</a>
-                    <a href="#">Newsletter </a>
-                    <a href="#">Return</a>
+                    <h3>CONTACT INFO</h3>
+                    <p>South-Kondwa,Pune, <br>Maharashtra,Pin-414001 <br>+91 7821893289 <br>www.restaurentms.com</p>
                 </div>
                 <div class="footer-center">
-                    <h3>Contact Us</h3>
+                    <h3>OPENING HOURS</h3>
                     <div>
                         <span>
                             <i></i>
                         </span>
-                        42 Dream House , Dreamy street , 7131 Dreamvilla , India
+                        Monday: 7:AM - 12Pm
                     </div>
                   
                     <div>
                         <span>
                             <i></i>
                         </span>
-                        company@gmail.com
+                        Tue-Wed: 7:Am - 12Pm
                     </div>
                     <div>
                         <span>
                             <i></i>
                         </span>
-                       97629416924
+                        Thur-Fri: 7:Am - 12Pm
                     </div>
                     <div>
                         <span>
                             <i></i>
                         </span>
-                        Dream city , India
+                        Sat-Sun: 7:Am - 12Pm
                     </div>
 
 
@@ -58,3 +50,4 @@
             </div>
         </div>
     </section>
+    

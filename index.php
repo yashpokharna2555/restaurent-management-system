@@ -1,3 +1,7 @@
+<?php
+include('connection.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +26,88 @@
                 <li class="item"><a href="contact.php">Contact Us</a></li>
                 <li class="item"><a href="cart.php">Cart</a></li>
                 <li class="item"><a href="admin.php">Admin</a></li>
-                <li class="item"><a href="hallbooking.php">Booking</a></li>
+                <li class="item"><a href="bookinghall.php">Booking</a></li>
                 <li class="item"><a href="feedback.php">Feedback</a></li>
+               
                 
             </ul>
         </div>
+        <?php
+            if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)
+            {
+                echo "
+                <div class='user'>
+
+                    $_SESSION[username] - <a href='logout.php'>LOGOUT</a>
+                </div>
+                ";
+            }
+            else{
+                echo "
+                <div class='sign-in-up'>
+                <button type='button' onclick=\"popup('login-popup')\">Login</button>
+                <button type='button' onclick=\"popup('register-popup')\">Register</button>
+                </div>
+                ";
+            }
+        ?>
     </nav>
+
+    <!-- -------------- login ------------------------------- -->
+    <div class="popup-container" id="login-popup">
+        <div class=" popup">
+            <form action="login_register.php" method="POST">
+                <h2>
+                    <span>User Login</span>
+                    <button type="reset" onclick="popup('login-popup')">X</button>
+                </h2>
+                <input type="text" placeholder="E-mail or Username" name="email_username" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <button type="submit" class="login-btn" name="login">Login</button>
+            </form>
+            <div class="forgot-btn">
+                <button type="button" onclick="forgotPopup()">Forgot Password</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popup-container" id="register-popup">
+        <div class="register popup">
+            <form action="login_register.php" method="POST">
+                <h2>
+                    <span>User REGISTER</span>
+                    <button type="reset" onclick="popup('register-popup')">X</button>
+                </h2>
+                <input type="text" placeholder="FULL NAME"  name="fullname" required>
+                <input type="text" placeholder="User Name" name="username" required>
+                <input type="email" placeholder="E-Mail"  name="email" required>
+                <input type="password" placeholder="Password"  name="password" required>
+                <button type="submit" class="register-btn" name="register">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup-container" id="forgot-popup">
+        <div class="forgot popup">
+            <form action="forgotpassword.php" method="POST">
+                <h2>
+                    <span>Reset Password</span>
+                    <button type="reset" onclick="popup('forgot-popup')">X</button>
+                </h2>
+                <input type="email" placeholder="E-mail" name="email">
+                
+                <button type="submit" class="reset-btn" name="send-reset-link">Send Link</button>
+            </form>
+            
+        </div>
+    </div>
+    <!-- <?php
+      if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true)
+      {
+         echo"<h1 style='text-align:center; margin-top:200px'>Welcome - $_SESSION[username]</h1>";
+      }
+    ?> -->
 
     <!-- ----------  Home --------------------- -->
     <section id="home">
@@ -40,30 +120,36 @@
     <section id="rooms-right">
         <div class="paras">
           <p class="sectionTag">A.C Delux Room</p>
-          <p class="sectionsubTag">Whether you are here for business or some alone time deluxe room is spacious comfortable and luxuriously elegant. Experience the best living hotel in Chinsurah, enjoy with all facilities make your stay comfortable. Quos optio aliquid at iste ut doloribus, accusamus dignissimos similique assumenda, aut neque quis consectetur doloremque eveniet sed quibusdam quasi, expedita minima provident nobis deleniti. Voluptatibus voluptates distinctio laborum minus, dignissimos architecto porro error necessitatibus excepturi animi. Dicta ea modi eaque ipsam natus et quo quisquam fugit vel maxime?</p>
+          <p class="sectionsubTag font">We have the best services provider in Room Management. with 24 hours room services and 24 hours check-out. We provide world class services in very low cost. i.e. 1100rs.</p>
+          <p class="price">Price per room : 1100Rs/-</p>
+          <a href="room.php"><button class="price-btn" >Book A Room</button></a>
           </div>
           <div class="thumbnail">
-          <a href="room.php"><img src="img/deluxroom.jpg" alt="delux" class="imgFluid"></a>
+          <img src="img/deluxroom.jpg" alt="delux" class="imgFluid">
           </div>
     </section>
 
     <section id="rooms-left">
         <div class="paras">
           <p class="sectionTag">A.C. Room</p>
-          <p class="sectionsubTag">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae error delectus eos dolorum ea aliquam nisi fugiat, voluptatibus quis possimus necessitatibus doloribus tenetur numquam. Voluptatum sit excepturi impedit ex molestias odit tenetur itaque aut laborum facere qui reiciendis quo, sunt ut optio quos saepe nisi debitis labore voluptas dolore, ipsum cum. Quos optio aliquid at iste ut doloribus, accusamus dignissimos similique assumenda, aut neque quis consectetur doloremque eveniet sed quibusdam quasi, expedita minima provident nobis deleniti. Voluptatibus voluptates distinctio laborum minus, dignissimos architecto porro error necessitatibus excepturi animi. Dicta ea modi eaque ipsam natus et quo quisquam fugit vel maxime?</p>
+          <p class="sectionsubTag font">We have the best services provider in Room Management. with 24 hours room services and 24 hours check-out. We provide world class services in very low cost. i.e. 900rs.</p>
+          <p class="price">Price per room : 900Rs/-</p>
+          <a href="room.php"><button class="price-btn">Book A Room</button></a>
           </div>
           <div class="thumbnail">
-              <a href="room.php"><img src="img/deluxroom.jpg" alt="delux" class="imgFluid"></a>
+           <img src="img/ac4.jpg" alt="delux" class="imgFluidd">
           </div>
     </section>
 
     <section id="rooms-right">
         <div class="paras">
           <p class="sectionTag">Non A.C. Room</p>
-          <p class="sectionsubTag">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae error delectus eos dolorum ea aliquam nisi fugiat, voluptatibus quis possimus necessitatibus doloribus tenetur numquam. Voluptatum sit excepturi impedit ex molestias odit tenetur itaque aut laborum facere qui reiciendis quo, sunt ut optio quos saepe nisi debitis labore voluptas dolore, ipsum cum. Quos optio aliquid at iste ut doloribus, accusamus dignissimos similique assumenda, aut neque quis consectetur doloremque eveniet sed quibusdam quasi, expedita minima provident nobis deleniti. Voluptatibus voluptates distinctio laborum minus, dignissimos architecto porro error necessitatibus excepturi animi. Dicta ea modi eaque ipsam natus et quo quisquam fugit vel maxime?</p>
+          <p class="sectionsubTag font">We have the best services provider in Room Management. with 24 hours room services and 24 hours check-out. We provide world class services in very low cost. i.e. 700rs.</p>
+          <p class="price">Price per room : 700Rs/-</p>
+            <a href="room.php"><button class="price-btn">Book A Room</button></a>
           </div>
           <div class="thumbnail">
-          <a href="room.php"><img src="img/deluxroom.jpg" alt="delux" class="imgFluid"></a>
+          <img src="img/nonacroom.jpg" alt="delux" class="imgFluid">
           </div>
     </section>
 
@@ -137,55 +223,47 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-center">
-                    <h3>Extras</h3>
-                    <a href="#">Brands</a>
-                    <a href="#">Gift Certificates</a>
-                    <a href="#">Affiliate</a>
-                    <a href="#">Specials</a>
-                    <a href="#">Site Map</a>
+                <h3>ABOUT US</h3>
+                <p>The majority of independent <br> properties are losing out <br> on a lot of business for <br> one very simple reason: <br> their hotel websites are poorly <br> designed.</p>
                 </div>
                 <div class="footer-center">
-                    <h3>Information</h3>
-                    <a href="#">About Us</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & conditions</a>
-                    <a href="#">Contact us</a>
-                    <a href="#">Site Map</a>
+                    <h3>USEFULL LINKS</h3>
+                    <a href="room.php">Rooms</a>
+                    <a href="contact.php">Contact Us</a>
+                    <a href="food.php">Food</a>
+                    <a href="booking.php">Booking</a>
+                    <a href="index.php">Home</a>
                 </div>
                 <div class="footer-center">
-                    <h3>My Account</h3>
-                    <a href="#">Account </a>
-                    <a href="#">Order History</a>
-                    <a href="#">Wish List</a>
-                    <a href="#">Newsletter </a>
-                    <a href="#">Return</a>
+                    <h3>CONTACT INFO</h3>
+                    <p>South-Kondwa,Pune, <br>Maharashtra,Pin-414001 <br>+91 7821893289 <br>www.restaurentms.com</p>
                 </div>
                 <div class="footer-center">
-                    <h3>Contact Us</h3>
+                    <h3>OPENING HOURS</h3>
                     <div>
                         <span>
                             <i></i>
                         </span>
-                        42 Dream House , Dreamy street , 7131 Dreamvilla , India
+                        Monday: 7:AM - 12Pm
                     </div>
                   
                     <div>
                         <span>
                             <i></i>
                         </span>
-                        company@gmail.com
+                        Tue-Wed: 7:Am - 12Pm
                     </div>
                     <div>
                         <span>
                             <i></i>
                         </span>
-                       97629416924
+                        Thur-Fri: 7:Am - 12Pm
                     </div>
                     <div>
                         <span>
                             <i></i>
                         </span>
-                        Dream city , India
+                        Sat-Sun: 7:Am - 12Pm
                     </div>
 
 
@@ -194,5 +272,25 @@
         </div>
     </section>
     
+
+    <script>
+        function popup(popup_name)
+        {
+             get_popup=document.getElementById(popup_name);
+             if(get_popup.style.display=="flex")
+            {
+                get_popup.style.display="none";
+            }
+            else{
+                get_popup.style.display="flex";
+            }
+        }
+
+        function forgotPopup()
+        {
+            document.getElementById('login-popup').style.display="none";
+            document.getElementById('forgot-popup').style.display="flex";
+        }
+    </script>
 </body>
 </html>

@@ -85,7 +85,7 @@ session_start();
            </div>
           <div class="form-payment">
                 <label >CVV Number</label>
-               <input type="number" name="cvv" class="form-control" required>
+               <input type="number" name="cvv" class="form-control" max-length="3" required>
           </div>
           
           <button class="payment-btn" name="card-purchase">Proceed For Further Details</button>

@@ -25,7 +25,7 @@
                 <li class="item"><a href="contact.php">Contact Us</a></li>
                 <li class="item"><a href="cart.php">Cart</a></li>
                 <li class="item"><a href="admin.php">Admin</a></li>
-                <li class="item"><a href="hallbooking.php">Booking</a></li>
+                <li class="item"><a href="bookinghall.php">Booking</a></li>
                 <li class="item"><a href="feedback.php">Feedback</a></li>
                 
             </ul>
